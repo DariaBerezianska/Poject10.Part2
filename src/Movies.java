@@ -1,12 +1,3 @@
-//For your collection create:
-//
-//private property count to store number of elements.
-//private array to store objects.
-//add(newObj) method to add new items.
-//printOne(int i) method to print detailed information about an item and print() method to print whole list of objects.
-//find(String s) method to search and print elements. Use corresponding string field of item to perform search.
-//sort() method to perform bubble sort of elements on the base of numeric property of the items.
-//other method for search objects by additional properties (such as year or another string properties or both simultaneously).
 public class Movies {
     private Movie[] movies;
     private int count;
@@ -53,12 +44,15 @@ public class Movies {
     }
 
     // find method to find movie by year of release
-    public void findByYearOfRelease(int year) {
+    public boolean findByYearOfRelease(int year) {
+        boolean found = false;
         for (int i = 0; i < count; i++) {
             if (movies[i].yearOfRelease == year) {
                 printMovie(i);
+                found = true;
             }
         }
+        return found;
     }
 
     // sort method to sort movies by rating
@@ -78,4 +72,5 @@ public class Movies {
             n--;
         }
     }
+
 }
